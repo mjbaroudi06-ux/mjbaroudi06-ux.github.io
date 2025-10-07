@@ -4015,3 +4015,19 @@ input, select, textarea {
   background-color: white;
   color: black;
 }
+
+/* Contact section unique background */
+#cta {
+  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/contact-bg.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Mobile fallback (the theme sets .wrapper.style4 to banner.jpg on mobile) */
+body.is-mobile.landing #cta {
+  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/contact-bg.jpg") !important;
+  background-position: center;
+  background-size: cover;
+}
