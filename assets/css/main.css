@@ -3998,3 +3998,15 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+/* 👇 Changes ONLY the hero button color */
+#banner .button.primary {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
+
+#banner .button.primary:hover {
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  color: black;
+}
