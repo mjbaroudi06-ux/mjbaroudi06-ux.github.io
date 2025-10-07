@@ -4027,3 +4027,20 @@ body.is-mobile.landing #cta {
   background-size: cover;
 }
 
+/* Interests gets its own background image */
+#interests {
+  background-image: linear-gradient(top, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("../../images/contact-bg.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* remove this line if you don't want the parallax effect */
+  color: #fff; /* keep section text readable over image */
+}
+
+/* Keep the two cards as white boxes on top of the bg image */
+#interests .features li {
+  background: #fff;
+  color: #000;
+}
+#interests .features li h3,
+#interests .features li p { color: #000; }
