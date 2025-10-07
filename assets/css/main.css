@@ -4010,11 +4010,6 @@ input, select, textarea {
   border-color: #f2f2f2;
   color: black;
 }
-/* Make Interests section white */
-#interests {
-  background-color: white;
-  color: black;
-}
 
 /* Contact section unique background */
 #cta {
@@ -4031,3 +4026,4 @@ body.is-mobile.landing #cta {
   background-position: center;
   background-size: cover;
 }
+
