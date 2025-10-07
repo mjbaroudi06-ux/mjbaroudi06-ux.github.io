@@ -29,7 +29,7 @@ you can use for pretty much whatever.
 
 AJ
 aj@lkn.io | @ajlkn
-
+ 
 
 Credits:
 
@@ -42,4 +42,5 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
+
 		Responsive Tools (github.com/ajlkn/responsive-tools)
