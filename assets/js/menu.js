@@ -24,3 +24,4 @@
   const ul = menu.querySelector('ul');
   if (ul) ul.outerHTML = html; else menu.insertAdjacentHTML('beforeend', html);
 })();
+
