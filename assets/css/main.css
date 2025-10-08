@@ -3998,12 +3998,7 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
-/* 👇 Changes ONLY the hero button color */
-#banner .button.primary {
-  background-color: white;
-  border-color: white;
-  color: black;
-}
+
 
 #banner .button.primary:hover {
   background-color: #f2f2f2;
@@ -4044,3 +4039,30 @@ body.is-mobile.landing #cta {
 }
 #interests .features li h3,
 #interests .features li p { color: #000; }
+
+/* --- MJ: Menu color override --- */
+#menu{
+  /* pick your color below */
+  background: #111111 !important;          /* solid dark */
+  /* example alternatives:
+     background: #ffffff !important;        // white
+     background: #0f172a !important;        // deep slate
+     background: rgba(17,17,17,.92) !important; // slightly see-through
+  */
+  color: rgba(255,255,255,.92);
+}
+
+/* menu item separators & link colors */
+#menu ul > li > a{
+  color: inherit;                           /* keep text readable */
+  border-top-color: rgba(255,255,255,.15);  /* thin divider line */
+}
+#menu ul > li > a:hover{
+  opacity: 1;
+}
+
+/* close “X” color */
+#menu .close{ color:#ffffff !important; }
+
+/* (optional) change the ‘Menu’ trigger color in the header */
+#header .menuToggle{ color:#ffffff; }       /* set to #000 if your header is light */
