@@ -4070,3 +4070,6 @@ body.is-mobile.landing #cta {
 /* Text-only layout for research page (keeps Spectral, just hides empty image column) */
 .research-page .spotlight .image { display: none; }
 .research-page .spotlight .content { width: 100%; max-width: 900px; }
+
+#menu .menu-heading { font-weight: 700; opacity: .9; margin-top: .75rem; }
+#menu .menu-sub { padding-left: .75rem; display: block; }
