@@ -4067,3 +4067,6 @@ body.is-mobile.landing #cta {
 /* (optional) change the ‘Menu’ trigger color in the header */
 #header .menuToggle{ color:#ffffff; }       /* set to #000 if your header is light */
 
+/* Text-only layout for research page (keeps Spectral, just hides empty image column) */
+.research-page .spotlight .image { display: none; }
+.research-page .spotlight .content { width: 100%; max-width: 900px; }
