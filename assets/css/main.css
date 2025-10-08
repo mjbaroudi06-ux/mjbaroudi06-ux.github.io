@@ -4043,7 +4043,7 @@ body.is-mobile.landing #cta {
 /* --- MJ: Menu color override --- */
 #menu{
   /* pick your color below */
-  background: #111111 !important;          /* solid dark */
+  background: #1f2937!important;          /* solid dark */
   /* example alternatives:
      background: #ffffff !important;        // white
      background: #0f172a !important;        // deep slate
@@ -4066,3 +4066,4 @@ body.is-mobile.landing #cta {
 
 /* (optional) change the ‘Menu’ trigger color in the header */
 #header .menuToggle{ color:#ffffff; }       /* set to #000 if your header is light */
+
