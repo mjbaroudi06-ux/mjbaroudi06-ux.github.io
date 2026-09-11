@@ -183,23 +183,29 @@
 		}
 	}
 
+	h2, h3 {
+		font-weight: 600;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+
 	h2 {
-		font-size: 1.35em;
-		line-height: 1.75em;
+		font-size: 2em;
+		line-height: 1.3em;
 
 		@include breakpoint('<=small') {
-			font-size: 1.1em;
-			line-height: 1.65em;
+			font-size: 1.5em;
+			line-height: 1.3em;
 		}
 	}
 
 	h3 {
-		font-size: 1.15em;
-		line-height: 1.75em;
+		font-size: 1.4em;
+		line-height: 1.4em;
 
 		@include breakpoint('<=small') {
-			font-size: 1em;
-			line-height: 1.65em;
+			font-size: 1.2em;
+			line-height: 1.35em;
 		}
 	}
 
@@ -249,7 +255,7 @@
 
 	code {
 		background: _palette(border-bg);
-		border-radius: 3px;
+		border-radius: 6px;
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		letter-spacing: 0;
@@ -391,7 +397,7 @@
 	textarea {
 		@include vendor('appearance', 'none');
 		background-color: _palette(border-bg);
-		border-radius: 3px;
+		border-radius: 6px;
 		border: none;
 		color: inherit;
 		display: block;
@@ -462,7 +468,7 @@
 
 			&:before {
 				background: _palette(border-bg);
-				border-radius: 3px;
+				border-radius: 6px;
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
@@ -494,7 +500,7 @@
 	input[type="checkbox"] {
 		& + label {
 			&:before {
-				border-radius: 3px;
+				border-radius: 6px;
 			}
 		}
 	}
@@ -530,7 +536,7 @@
 /* Box */
 
 	.box {
-		border-radius: 3px;
+		border-radius: 6px;
 		border: solid 2px _palette(border);
 		margin-bottom: _size(element-margin);
 		padding: 1.5em;
@@ -577,7 +583,7 @@
 
 		&.major {
 			@include vendor('transform', 'rotate(-45deg)');
-			border-radius: 3px;
+			border-radius: 6px;
 			border: solid 2px _palette(border);
 			display: inline-block;
 			font-size: 1.35em;
@@ -613,13 +619,13 @@
 /* Image */
 
 	.image {
-		border-radius: 3px;
+		border-radius: 6px;
 		border: 0;
 		display: inline-block;
 		position: relative;
 
 		img {
-			border-radius: 3px;
+			border-radius: 6px;
 			display: block;
 		}
 
@@ -905,9 +911,9 @@
 	button,
 	.button {
 		@include vendor('appearance', 'none');
-		@include vendor('transition', ('background-color #{_duration(transitions)} ease-in-out', 'color #{_duration(transitions)} ease-in-out'));
+		@include vendor('transition', ('background-color #{_duration(transitions)} ease-in-out', 'color #{_duration(transitions)} ease-in-out', 'transform 0.2s ease-in-out', 'box-shadow 0.2s ease-in-out'));
 		background-color: transparent;
-		border-radius: 3px;
+		border-radius: 6px;
 		border: 0;
 		box-shadow: inset 0 0 0 2px _palette(border);
 		color: _palette(fg-bold);
@@ -955,15 +961,18 @@
 
 		&.primary {
 			background-color: _palette(accent6, bg);
-			box-shadow: none !important;
+			box-shadow: 0 0.5em 1.5em rgba(0,0,0,0.2) !important;
 			color: _palette(accent6, fg-bold) !important;
 
 			&:hover {
 				background-color: lighten(_palette(accent6, bg), 5) !important;
+				box-shadow: 0 0.75em 1.75em rgba(0,0,0,0.25) !important;
+				transform: translateY(-2px);
 			}
 
 			&:active {
 				background-color: darken(_palette(accent6, bg), 5) !important;
+				transform: translateY(0);
 			}
 		}
 
@@ -1062,12 +1071,19 @@
 
 		.image {
 			@include vendor('order', '1');
-			border-radius: 0;
+			border-radius: 10px;
+			overflow: hidden;
 			width: 40%;
+			box-shadow: 0 1.5em 3em rgba(0,0,0,0.3);
 
 			img {
-				border-radius: 0;
+				@include vendor('transition', 'transform 0.6s ease');
+				border-radius: 10px;
 				width: 100%;
+			}
+
+			&:hover img {
+				@include vendor('transform', 'scale(1.05)');
 			}
 		}
 
@@ -1534,7 +1550,7 @@
 							position: relative;
 
 							&:after {
-								background-image: url('images/bars.svg');
+								background-image: url('images/bars-dark.svg');
 								background-position: right center;
 								background-repeat: no-repeat;
 								content: '';
@@ -1572,6 +1588,14 @@
 				@include vendor('pointer-events', 'none');
 				opacity: 0;
 			}
+
+			nav > ul > li > a {
+				color: #fff;
+
+				&.menuToggle:after {
+					background-image: url('images/bars.svg');
+				}
+			}
 		}
 	}
 
@@ -1581,6 +1605,7 @@
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
+		color: #fff;
 		cursor: default;
 		height: 100vh;
 		min-height: 35em;
@@ -1588,9 +1613,21 @@
 		position: relative;
 		text-align: center;
 
+		&.compact {
+			color: _palette(fg-bold);
+			height: auto;
+			min-height: 0;
+			@include padding(6em, 3em);
+
+			&:after {
+				content: none;
+			}
+		}
+
 		h2 {
 			@include vendor('transform', 'scale(1)');
 			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+			color: inherit;
 			display: inline-block;
 			font-size: 1.75em;
 			opacity: 1;
@@ -1601,7 +1638,7 @@
 			&:before, &:after {
 				@include vendor('transition', 'width 0.85s ease');
 				@include vendor('transition-delay', '0.25s');
-				background: _palette(fg-bold);
+				background: currentColor;
 				content: '';
 				display: block;
 				height: 2px;
